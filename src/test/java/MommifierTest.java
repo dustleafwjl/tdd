@@ -9,10 +9,15 @@ public class MommifierTest {
         Assertions.assertEquals("", result);
     }
     @Test
-    void should_return_original_when_convert_given_the_number_of_vowels_are_not_more_than_30_percent_of_the_string_length() {
+    void should_return_original_when_convert_given_the_number_of_vowels_are_less_than_30_percent_of_the_string_length() {
         Mommifier mommifier = new Mommifier();
         String result = mommifier.convert("allset");
         Assertions.assertEquals("allset", result);
     }
-
+    @Test
+    void should_insert_mommy_for_each_continuous_set_of_vowels_when_convert_given_the_number_of_vowels_are_more_than_30_percent_of_the_string_length() {
+        Mommifier mommifier = new Mommifier();
+        String result = mommifier.convert("aeuadde");
+//        Assertions.assertEquals("amommyemommyumommyadde", result);
+    }
 }
