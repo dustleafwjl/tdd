@@ -11,7 +11,7 @@ public class Mommifier {
         if(!string.matches("^[A-Za-z0-9]+$")) {
             throw new Exception("input is wrong");
         }
-        int vowelsCount = getVowelsCount();
+        int vowelsCount = getVowelsCount(string);
         if(vowelLimitReached(string, vowelsCount)) {
             ArrayList vowelIndexArr = new ArrayList();
             for (int i = 0; i < string.length() - 1; i ++) {
@@ -35,10 +35,10 @@ public class Mommifier {
         return vowelsCount / string.length() > LIMIT;
     }
 
-    private int getVowelsCount() {
+    private int getVowelsCount(String string) {
         int vowelsCount = 0;
-        for (char item : VOWELS) {
-            if(VOWELS.contains(item)) {
+        for (int i = 0; i < string.length(); i ++) {
+            if(VOWELS.contains(string.charAt(i))) {
                 vowelsCount ++;
             }
         }
